@@ -8,7 +8,7 @@ properties([
   pipelineTriggers([[$class:"SCMTrigger", scmpoll_spec:"H/10 * * * *"]]),
 ])
 
-node('docker') {
+node('docker&&linux') {
     def imageTag
     stage('Checkout') {
         deleteDir()
